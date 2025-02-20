@@ -9,7 +9,7 @@ RUN apt-get update && \
     curl ca-certificates gnupg && \
     curl -s https://install.citusdata.com/community/deb.sh | bash && \
     apt-get update && \
-    apt-get install -y --no-install-recommends postgresql-16-citus && \
+    apt-get install -y --no-install-recommends postgresql-16-citus-13.0=13.0.1.citus-1 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
