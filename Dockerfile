@@ -13,7 +13,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Ensure Citus is preloaded
-RUN echo "shared_preload_libraries = 'citus'" >> /usr/share/postgresql/postgresql.conf.sample
+# Append the Citus configuration to the actual postgresql.conf file
+RUN echo "shared_preload_libraries = 'citus'" >> /var/lib/postgresql/data/postgresql.conf
 
 USER 26
